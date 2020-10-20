@@ -1,0 +1,583 @@
+<body style="display: block;">
+
+    <!-- NAVIGATION
+    ================================================== -->
+
+  
+
+    <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+
+        <div class="header">
+
+            <!-- Image -->
+            <div class="card-img-top">
+                <img id="cover" src="https://www.codepicky.com/wp-content/uploads/2018/08/content-placeholders-preview.jpg" class="header-img-top bg-contain bg-center"
+                alt="...">
+            </div>
+            <div class="container-fluid">
+
+                <!-- Body -->
+                <div class="header-body mt-n5 mt-md-n6">
+                    <div class="row align-items-end">
+                        <div class="col-auto">
+
+                            <!-- Avatar -->
+                            <div class="avatar avatar-xxl header-avatar-top">
+                                <img src="https://media1.tenor.com/images/38153b27905ce716003dfdecc4989bb0/tenor.gif?itemid=9255733"
+                                    alt="..." class="avatar-img rounded-circle border border-4 border-body ph-picture" id="avatar">
+                            </div>
+
+                        </div>
+                        <div class="col mb-3 ml-n3 ml-md-n2">
+
+                            <!-- Pretitle -->
+                            <h6 class="text-xl text-gray-500 mt-3" id="depto">
+                                Puesto
+                            </h6>
+
+                            <!-- Title -->
+                            <h1 class="text-2xl mt-2"  id="name">
+                                Nombre completo
+                            </h1>
+
+                        </div>
+                        <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
+
+                            <!-- Button 
+                            <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
+                                Subscribe
+                            </a>-->
+
+                        </div>
+                    </div> <!-- / .row -->
+                    <div class="row align-items-center">
+                        <div class="col">
+
+                            <!-- Nav -->
+                            <ul class="nav nav-tabs nav-overflow header-tabs">
+                                <li class="nav-item">
+                                    <a href="profile-posts.html" class="nav-link active">
+                                        Promociones
+                                    </a>
+                                </li>
+                
+                                <li class="nav-item">
+                                    <a href="profile-files.html" class="nav-link">
+                                        Inventario
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <div id="whats"></div>
+                                </li>
+                                <li class="nav-item">
+                                    <div id="movil"></div>
+                                   
+                                </li>
+                              
+                                <li class="nav-item">
+                                    <div id="email"></div>
+                                    
+                                </li>
+                                <li class="nav-item">
+                                  
+                                    <div id="image"></div>
+                                </li>
+                                
+                            </ul>
+
+                        </div>
+                    </div>
+                </div> <!-- / .header-body -->
+
+            </div>
+        </div>
+        <!-- / body -->
+        <div class="container-fluid">
+          <div id="promos"></div>
+
+          
+
+
+          </div>
+
+    </div>
+
+    </div><!-- / .main-content -->
+   
+    <div id="profile" class="visible"></div>
+    <div id="uw" class="visible"></div>
+    <div id="um" class="visible"></div>
+    <div id="ue" class="visible"></div>
+    
+    <div id="draggable-live-region" aria-relevant="additions" aria-atomic="true" aria-live="assertive" role="log"
+        style="position: fixed; width: 1px; height: 1px; top: -1px; overflow: hidden;"></div>
+    <div id="chart-tooltip" role="tooltip" class="popover bs-popover-top"
+        style="top: 340.426px; left: 1066.58px; visibility: hidden;">
+        <div class="arrow"></div>
+        <h3 class="popover-header text-center">Oct 10</h3>
+        <div class="popover-body d-flex align-items-center justify-content-center"><span class="popover-body-indicator"
+                style="background-color: #2C7BE5"></span><span class="popover-body-value">26%</span></div>
+    </div>
+</body>
+
+
+
+<style>
+   
+    img#cover {
+        height: 300px!important;
+        object-fit: cover;
+
+    }
+    button.nav-link{
+        background-color: transparent;
+    }
+    .visible{
+        display: none;
+    }
+
+</style>
+
+<script type="text/jsx">
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+    var token = getUrlParameter('token');
+
+    class Profile extends React.Component{
+          constructor(props) {
+            super(props);
+            this.state = {
+              data: []
+            }
+            
+         }
+          componentDidMount() {
+            console.log(token)
+           
+                if (token) {
+                    
+                    var database = firebase.database();
+                    var ref = database.ref("profiles/" + token);
+                    ref.once('value', snap => {
+                        const shop = {
+                                id: snap.key,
+                                data: snap.val(),
+                          };
+                         
+                          $("#name").text(shop.data.name);
+                          $("#depto").text(shop.data.depto);
+                       
+                         
+                });
+                } else {
+                  // No user is signed in.
+                }
+          
+
+
+           
+           
+                
+         
+           
+           
+           
+        }
+            render(){
+              
+                return(
+                        <div>
+                       
+                        </div>
+                )
+            }
+      }
+      ReactDOM.render(<Profile />,document.getElementById('profile'));
+
+      class Whats extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {
+            datos: []
+          }
+          
+       }
+        componentDidMount() {
+            var self = this
+      
+              if (token) {
+                  
+                  var database = firebase.database();
+                  var ref = database.ref("profiles/" + token);
+                  ref.once('value', snap => {
+                      const shop = {
+                              id: snap.key,
+                              data: snap.val(),
+                        };
+                       
+                        $("#uw").text(shop.data.whats)
+                        self.setState({
+                            datos: $("#uw").html()
+                        })   
+                        console.log(self.state.datos) 
+                       
+              });
+              
+              } else {
+                // No user is signed in.
+              }
+         
+           
+      }
+          render(){
+            
+                var whats = this.state.datos
+                var url = "https://api.whatsapp.com/send?phone=" + whats
+              return(
+                      <div>
+                        <a href={url} target="blank" className="nav-link">
+                            <span className="fe fe-smartphone"></span> WhatsApp
+                        </a>
+                      </div>
+              )
+          }
+    }
+    ReactDOM.render(<Whats />,document.getElementById('whats'));
+    class Movil extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {
+            datos: []
+          }
+          
+       }
+        componentDidMount() {
+            var self = this
+        
+              if (token) {
+                  
+                  var database = firebase.database();
+                  var ref = database.ref("profiles/" + token);
+                  ref.once('value', snap => {
+                      const shop = {
+                              id: snap.key,
+                              data: snap.val(),
+                        };
+                       
+                        $("#um").text(shop.data.movil)
+                        self.setState({
+                            datos: $("#um").html()
+                        })   
+                        console.log(self.state.datos) 
+                       
+              });
+              
+              } else {
+                // No user is signed in.
+              }
+           
+           
+      }
+          render(){
+            
+                var movil = this.state.datos
+                var url = "Móvil" + " " + movil
+              return(
+                      <div>
+                        <a href="#" className="nav-link">
+                            <span className="fe fe-smartphone"></span> {url}
+                        </a>
+                       
+                      </div>
+              )
+          }
+    }
+    ReactDOM.render(<Movil />,document.getElementById('movil'));
+    class Email extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {
+            datos: []
+          }
+          
+       }
+        componentDidMount() {
+            var self = this
+          
+              if (token) {
+                  
+                  var database = firebase.database();
+                  var ref = database.ref("profiles/" + token);
+                  ref.once('value', snap => {
+                      const shop = {
+                              id: snap.key,
+                              data: snap.val(),
+                        };
+                       
+                        $("#ue").text(shop.data.email)
+                        self.setState({
+                            datos: $("#ue").html()
+                        })   
+                        console.log(self.state.datos) 
+                       
+              });
+              
+              } else {
+                // No user is signed in.
+              }
+           
+           
+      }
+          render(){
+            
+                var email = this.state.datos
+                var url = "mailto:" + email
+              return(
+                      <div>
+                        
+                        <a href={url} className="nav-link">
+                            <span className="fe fe-mail"></span> Email
+                        </a>
+                       
+                      </div>
+              )
+          }
+    }
+    ReactDOM.render(<Email />,document.getElementById('email'));
+  
+
+    class Imagen extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {
+            datos: []
+          }
+          
+       }
+        componentDidMount() {
+           
+            var self = this
+         
+              if (token) {
+                  
+                var storage = firebase.storage();
+
+                var storageRef = storage.ref()
+                var storageRef_cover = storage.ref()
+                var starsRef = storageRef.child('profile').child(token).child(token);
+                var starsRef_cover = storageRef_cover.child('cover').child(token).child(token);
+               
+                starsRef.getDownloadURL().then(function(url) {
+                 $("#avatar").attr('src', url)
+                }).catch(function(error) {
+                
+                 
+                  switch (error.code) {
+                    case 'storage/object-not-found':
+                   
+                      console.log(error.code)
+                      break;
+                
+                    case 'storage/unauthorized':
+                   
+                      console.log(error.code)
+                      break;
+                
+                    case 'storage/canceled':
+                     
+                      console.log(error.code)
+                      break;
+                
+               
+                
+                    case 'storage/unknown':
+                   
+                      console.log(error.code)
+                      break;
+                  }
+                });
+                  
+                 
+                      
+                starsRef_cover.getDownloadURL().then(function(url) {
+                    $("#cover").attr('src', url)
+                   }).catch(function(error) {
+                   
+                    
+                     switch (error.code) {
+                       case 'storage/object-not-found':
+                      
+                         console.log(error.code)
+                         break;
+                   
+                       case 'storage/unauthorized':
+                      
+                         console.log(error.code)
+                         break;
+                   
+                       case 'storage/canceled':
+                        
+                         console.log(error.code)
+                         break;
+                   
+                  
+                   
+                       case 'storage/unknown':
+                      
+                         console.log(error.code)
+                         break;
+                     }
+                   });
+  
+              
+              } else {
+                // No user is signed in.
+              }
+          
+           
+      }
+          render(){
+            
+                var token = this.state.token
+                var url = window.location.host + "/me?token=" + token 
+              return(
+                      <div>
+                        
+                        
+                       
+                      </div>
+              )
+          }
+    }
+    ReactDOM.render(<Imagen />,document.getElementById('image'));
+
+
+    class Promociones extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state = {
+          dato: []
+        }
+        
+     }
+      componentDidMount() {
+         
+          var self = this
+
+          var database = firebase.database();
+      
+          var ref = database.ref("business").child(token)
+          ref.orderByChild("estatusId").equalTo(2).on('child_added', snap => { 
+          
+          const shop = {
+            id: snap.key,
+            data: snap.val(),
+          };
+          console.log(shop)
+            var newArr = self.state.dato
+            newArr.push(shop);
+              self.setState({
+                  dato: self.state.dato, arr:newArr
+              });
+         
+           });
+
+         
+    }
+        render(){
+          
+              var token = this.state.token
+              var url = window.location.host + "/me?token=" + token 
+              var lista = this.state.dato
+              var list = lista.map(function(o,i){
+                  var file = o.data.file
+                  if(o.data.tipo == "video"){
+                  
+                      var imagenVideo = <video  controls>
+                          <source src={file} type="video/mp4" />
+                        </video>
+                  }
+                  else{
+                      var imagenVideo = <img src={file} alt="..." className="avatar-img rounded transform scale-95 " />
+                  }
+  
+                  return(
+                      <div className="col-12 col-lg-3">
+  
+               
+                    
+                          <div className="card" >
+     
+                             <a href="project-overview.html">
+                              {imagenVideo}
+                             </a>
+           
+                          
+                             <div className="card-body">
+           
+                           
+                               <div className="row align-items-center mb-4">
+                                 <div className="col font-sans">
+           
+                                  {o.data.nombre}
+           
+                                 </div>
+                               </div> 
+           
+                            
+                               <div className="row no-gutters border-top border-bottom">
+                                 <div className="col-6 py-4 text-center">
+           
+                                 
+                                   <h6 className="text-uppercase text-base mb-2 text-gray-500 whitespace-normal">
+                                     Me interesa
+                                   </h6>
+           
+                                 
+                                   <h2 className="mb-0">$2.5k</h2>
+           
+                                 </div>
+                                 <div className="col-6 py-4 text-center border-left">
+           
+                                 
+                                   <h6 className="text-uppercase text-muted text-base mb-2 text-gray-500 whitespace-normal">
+                                     Me gusta
+                                   </h6>
+           
+                                  
+                                   <h2 className="mb-0">12.5k</h2>
+           
+                                 </div>
+                               </div>
+           
+                          
+                             </div> 
+           
+                           </div>
+             
+         
+                   </div>
+                  )
+              })
+            return(
+              <div className="row">{list} </div>
+            )
+        }
+  }
+  ReactDOM.render(<Promociones />,document.getElementById('promos'));
+      </script>
+    

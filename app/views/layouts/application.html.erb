@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tarjetas Digitales</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://dashkit.goodthemes.co/assets/fonts/feather/feather.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.5/tailwind.min.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://dashkit.goodthemes.co/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://dashkit.goodthemes.co/assets/js/dashkit.min.js"></script>
+  
+ 
+<script src="https://unpkg.com/react@15.0.0/dist/react.js"></script>
+<script src="https://fb.me/react-15.0.0.min.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+<script src="https://rawgit.com/arqex/react-json/master/build/Json.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  </head>
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBhdmV178AeV1BpPW52wcrYjPNVJIK5TI4",
+    authDomain: "cards-8c007.firebaseapp.com",
+    databaseURL: "https://cards-8c007.firebaseio.com",
+    projectId: "cards-8c007",
+    storageBucket: "cards-8c007.appspot.com",
+    messagingSenderId: "946550383277",
+    appId: "1:946550383277:web:8de3b414c1f47edf035c24",
+    measurementId: "G-B3BTZ8BVNT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  function signOut(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+ }
+ 
+ 
+</script>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

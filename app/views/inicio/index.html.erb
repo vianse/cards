@@ -1,0 +1,149 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+
+
+    <style>
+      body {
+        display: none;
+      }
+
+    </style>
+    
+    <!-- Title -->
+    <title>Dashkit</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-156446909-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-156446909-1");</script>
+
+  </head>
+  <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary" style="display: block;">
+
+    <!-- CONTENT
+    ================================================== -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
+
+          <!-- Image -->
+          <div class="text-center">
+            <img src="https://dashkit.goodthemes.co/assets/img/illustrations/happiness.svg" alt="..." class="img-fluid">
+          </div>
+
+        </div>
+        <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
+          
+          <!-- Heading -->
+          <h1 class="display-4 text-center mb-3">
+            Sign in
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="text-muted text-center mb-5">
+            Free access to our dashboard.
+          </p>
+          
+          <!-- Form -->
+          <form>
+
+            <!-- Email address -->
+            <div class="form-group">
+
+              <!-- Label -->
+              <label>Email Address</label>
+
+              <!-- Input -->
+              <input type="email" class="form-control" id="email" placeholder="name@address.com">
+
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+
+              <div class="row">
+                <div class="col">
+                      
+                  <!-- Label -->
+                  <label>Password</label>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <!-- Help text -->
+                  <a href="password-reset-illustration.html" class="form-text small text-muted">
+                    Forgot password?
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Input group -->
+              <div class="input-group input-group-merge">
+
+                <!-- Input -->
+                <input type="password" class="form-control form-control-appended" id="password" placeholder="Enter your password">
+
+                <!-- Icon -->
+                
+
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <a href="javascript:signin();" class="btn btn-lg btn-block btn-primary mb-3">
+              Sign in
+            </a>
+            
+            <!-- Link -->
+            <div class="text-center">
+              <small class="text-muted text-center">
+                Aun no tienes una cuenta? <a href="javascript:registrar();">Registrar</a>.
+              </small>
+            </div>
+            
+          </form>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+
+    
+
+  
+<div id="draggable-live-region" aria-relevant="additions" aria-atomic="true" aria-live="assertive" role="log" style="position: fixed; width: 1px; height: 1px; top: -1px; overflow: hidden;"></div></body></html>
+
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = "/me"
+   
+  } else {
+    // No user is signed in.
+    
+  }
+});
+
+ function registrar(){
+     var email= $("#email").val()
+     var password= $("#password").val()
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        // ...
+      });
+ }
+ function signin(){
+     var email= $("#email").val()
+     var password= $("#password").val()
+     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+ }
+
+</script>
