@@ -358,7 +358,7 @@
                   
                       
                         self.setState({
-                            token: user.email
+                            token: user.uid
                         })   
                        
                         
@@ -373,7 +373,7 @@
           render(){
             
                 var token = this.state.token
-                var url = "https://" + window.location.host + "/public?token=" + token 
+                var url = "https://" + window.location.host + "/public?token=" + "' + token + '" 
               return(
                       <div>
                         
