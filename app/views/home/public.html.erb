@@ -158,7 +158,8 @@
             }
         }
     };
-    var token = getUrlParameter('token');
+    var str= getUrlParameter('token');
+    var token = str.replace("'", "");
 
     class Profile extends React.Component{
           constructor(props) {
