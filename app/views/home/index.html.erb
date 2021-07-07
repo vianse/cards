@@ -350,7 +350,7 @@
           
        }
         componentDidMount() {
-            $('[data-toggle="popover"]').popover()
+          //jQuery('[data-toggle="popover"]').popover()
             var self = this
           firebase.auth().onAuthStateChanged(function(user) {
               if (user) {

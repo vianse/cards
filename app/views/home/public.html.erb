@@ -1,150 +1,186 @@
+<style>
+.imagen{
+  object-fit:cover!important;
+  width: 200px;
+}
+</style>
 
 <body style="display: block;">
 
-    <!-- NAVIGATION
+  <!-- NAVIGATION
     ================================================== -->
 
-  
 
-    <!-- MAIN CONTENT
+
+  <!-- MAIN CONTENT
     ================================================== -->
-    <div class="main-content">
+  <div class="main-content">
 
-        <div class="header">
+    <div class="header">
 
-            <!-- Image -->
-            <div class="card-img-top">
-                <img id="cover" src="https://www.codepicky.com/wp-content/uploads/2018/08/content-placeholders-preview.jpg" class="header-img-top bg-contain bg-center"
-                alt="...">
+      <!-- Image -->
+      <div class="card-img-top">
+        <img id="cover" src=""
+          class="header-img-top bg-contain bg-center" alt="...">
+      </div>
+      <div class="container-fluid">
+
+        <!-- Body -->
+        <div class="header-body mt-n5 mt-md-n6">
+          <div class="row align-items-end">
+            <div class="hidden lg:flex ">
+              <img src=""
+                alt="..." class="imagen rounded-full" id="avatar">
             </div>
-            <div class="container-fluid">
+           
+              
+                
+                <div class="flex flex-col mt-5 lg:mt-0">
+                  <div class="text-5xl font-bold text-gray-800 mt-0" id="name">
+                    Nombre completo
+                  </div>
+                  <div class="text-xl text-gray-600" id="depto">
+                    Puesto
+                  </div>
+                </div>
+           
+              
+            
 
-                <!-- Body -->
-                <div class="header-body mt-n5 mt-md-n6">
-                    <div class="row align-items-end">
-                        <div class="col-auto">
+          
+            <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
 
-                            <!-- Avatar -->
-                            <div class="avatar avatar-xxl header-avatar-top">
-                                <img src="https://media1.tenor.com/images/38153b27905ce716003dfdecc4989bb0/tenor.gif?itemid=9255733"
-                                    alt="..." class="avatar-img rounded-circle border border-4 border-body ph-picture" id="avatar">
-                            </div>
-
-                        </div>
-                        <div class="col mb-3 ml-n3 ml-md-n2">
-
-                            <!-- Pretitle -->
-                            <h6 class="text-base text-gray-500 mt-3" id="depto">
-                                Puesto
-                            </h6>
-
-                            <!-- Title -->
-                            <h1 class="text-4xl mt-2"  id="name">
-                                Nombre completo
-                            </h1>
-
-                        </div>
-                        <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
-
-                            <!-- Button 
+              <!-- Button 
                             <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
                                 Subscribe
                             </a>-->
 
-                        </div>
-                    </div> <!-- / .row -->
-                    <div class="row align-items-center">
-                        <div class="col">
+            </div>
+          </div> <!-- / .row -->
+          <div class="row align-items-center">
+            <div class="col">
 
-                            <!-- Nav -->
-                            <ul class="nav nav-tabs nav-overflow header-tabs">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Promociones
-                                    </a>
-                                </li>
-                
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Inventario
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <div id="whats"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <div id="movil"></div>
-                                   
-                                </li>
-                              
-                                <li class="nav-item">
-                                    <div id="email"></div>
-                                    
-                                </li>
-                                <li class="nav-item">
-                                  <a href="http://www.nissanecatepec.com.mx" class="nav-link">
-                                    Web
-                                </a>
-                                  
-                              </li>
-                                <li class="nav-item">
-                                  
-                                    <div id="image"></div>
-                                </li>
-                                
-                            </ul>
+              <!-- Nav -->
+              <ul class="nav nav-tabs nav-overflow header-tabs">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">
+                    Promociones
+                  </a>
+                </li>
+                <li class="flex flex-col nav-item">
+                  <div class=" self-center w-8">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <title>WhatsApp</title>
+                      <path style="fill:#25D366;" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                  </div>
+                 
+                  <div id="whats" class="mt-2"></div>
+                </li>
+                <li class="flex flex-col nav-item">
+                  <div class=" self-center w-8">
+                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Teléfono</title>
+                    <path style="fill:#1b1b1b;" d="M2.49 5.114l8.3-4.79a2.421 2.421 0 012.39-.017l.03.017 8.299 4.79c.74.427 1.2 1.212 1.211 2.065V16.79c0 .854-.451 1.645-1.184 2.08l-.027.016-8.299 4.79a2.42 2.42 0 01-2.39.017l-.03-.017-8.3-4.79a2.421 2.421 0 01-1.21-2.065V7.21c0-.855.45-1.645 1.184-2.08l.026-.016 8.3-4.79zM12 4.026L5.092 8.013v7.974L12 19.974V12l6.908-3.987z"/></svg>
+                  </div>
+                    <div id="movil" class="mt-2"></div>
 
-                        </div>
-                    </div>
-                </div> <!-- / .header-body -->
+                </li>
+
+                <li class="nav-item">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                      id="Capa_1" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                      style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                      <path style="fill:#1E88E5;"
+                        d="M499.628,407.468c-10.128,12.16-25.134,19.194-40.96,19.2H53.334  c-15.826-0.006-30.832-7.04-40.96-19.2l195.627-162.987l20.267,13.867c16.695,11.52,38.772,11.52,55.467,0l20.267-13.867  L499.628,407.468z" />
+                      <path style="fill:#64B5F6;"
+                        d="M502.614,108.588L304.001,244.481l-20.267,13.867c-16.695,11.52-38.772,11.52-55.467,0  l-20.267-13.867L9.388,108.374c9.994-14.411,26.409-23.017,43.947-23.04h405.333C476.285,85.241,492.781,93.969,502.614,108.588z" />
+                      <g>
+                        <path style="fill:#2196F3;"
+                          d="M208.001,244.481L12.374,407.468c-8.007-9.57-12.388-21.655-12.373-34.133V138.668   c-0.065-10.823,3.214-21.403,9.387-30.293L208.001,244.481z" />
+                        <path style="fill:#2196F3;"
+                          d="M512.001,138.668v234.667c0.014,12.478-4.366,24.563-12.373,34.133L304.001,244.481l198.613-135.893   C508.756,117.414,512.033,127.915,512.001,138.668z" />
+                      </g>
+
+                    </svg>
+                    <div id="email"></div>
+                  </div>
+
+
+
+                </li>
+                <li class="flex flex-col nav-item">
+                  <div class=" self-center w-8">
+                  <a href="http://www.nissanecatepec.com.mx" class="">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <title>Página Web</title><path style="fill:#1E88E5;" d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/></svg>
+                      <div class="mt-2">Web</div>
+                    </a>
+                  </div>
+                  
+                </li>
+                <li class="flex flex-col nav-item">
+                  <div class="self-center w-8">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title>
+                      <path style="fill:#1877F2;" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                      
+                  </div>
+                  <a href="https://facebook.com/pages/category/Car-Dealership/nissaneca3030/posts/?locale2=es_LA" 
+                      class="">
+                        <div class="mt-2">Facebook</div>
+                      </a>
+                </li>
+                <li class="nav-item">
+
+                  <div id="image"></div>
+                </li>
+
+              </ul>
 
             </div>
-        </div>
-        <!-- / body -->
-        <div class="container-fluid">
-          <div id="promos"></div>
-
-          
-
-
           </div>
+        </div> <!-- / .header-body -->
+
+      </div>
+    </div>
+    <!-- / body -->
+    <div class="container-fluid">
+      <div id="promos"></div>
+
+
+
 
     </div>
 
-    </div><!-- / .main-content -->
-   
-    <div id="profile" class="visible"></div>
-    <div id="uw" class="visible"></div>
-    <div id="um" class="visible"></div>
-    <div id="ue" class="visible"></div>
-    
-    <div id="draggable-live-region" aria-relevant="additions" aria-atomic="true" aria-live="assertive" role="log"
-        style="position: fixed; width: 1px; height: 1px; top: -1px; overflow: hidden;"></div>
-    <div id="chart-tooltip" role="tooltip" class="popover bs-popover-top"
-        style="top: 340.426px; left: 1066.58px; visibility: hidden;">
-        <div class="arrow"></div>
-        <h3 class="popover-header text-center">Oct 10</h3>
-        <div class="popover-body d-flex align-items-center justify-content-center"><span class="popover-body-indicator"
-                style="background-color: #2C7BE5"></span><span class="popover-body-value">26%</span></div>
-    </div>
+  </div>
+
+  </div><!-- / .main-content -->
+
+  <div id="profile" class="visible"></div>
+  <div id="uw" class="visible"></div>
+  <div id="um" class="visible"></div>
+  <div id="ue" class="visible"></div>
+
+  
 </body>
 
 
 
 <style>
-   
-    img#cover {
-        height: 300px!important;
-        object-fit: cover;
+  img#cover {
+    height: 300px !important;
+    object-fit: cover;
 
-    }
-    button.nav-link{
-        background-color: transparent;
-    }
-    .visible{
-        display: none;
-    }
+  }
 
+  button.nav-link {
+    background-color: transparent;
+  }
+
+  .visible {
+    display: none;
+  }
 </style>
 
 <script type="text/jsx">
@@ -257,8 +293,8 @@
                 var url = "https://api.whatsapp.com/send?phone=" + whats
               return(
                       <div>
-                        <a href={url} target="blank" className="nav-link">
-                            <span className="fe fe-smartphone"></span> WhatsApp
+                        <a href={url} target="blank" className="">
+                            WhatsApp
                         </a>
                       </div>
               )
@@ -303,11 +339,11 @@
           render(){
             
                 var movil = this.state.datos
-                var url = "Móvil" + " " + movil
+                var url =  movil
               return(
                       <div>
-                        <a href="#" className="nav-link">
-                            <span className="fe fe-smartphone"></span> {url}
+                        <a href="#" className="">
+                          {url}
                         </a>
                        
                       </div>
@@ -355,13 +391,12 @@
                 var email = this.state.datos
                 var url = "mailto:" + email
               return(
-                      <div>
-                        
-                        <a href={url} className="nav-link">
-                            <span className="fe fe-mail"></span> Email
+                     
+                        <a href={url} className="">
+                            Email
                         </a>
                        
-                      </div>
+                     
               )
           }
     }
@@ -567,4 +602,3 @@
   }
   ReactDOM.render(<Promociones />,document.getElementById('promos'));
       </script>
-    
