@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vicards</title>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <body style="display: block;">
 
     <!-- NAVIGATION
@@ -19,7 +20,7 @@
 
             <!-- Image -->
             <div class="card-img-top">
-                <img id="cover" src="https://www.codepicky.com/wp-content/uploads/2018/08/content-placeholders-preview.jpg" class="header-img-top transform scale-95"
+                <img id="cover" src="" class="header-img-top transform scale-95"
                 alt="...">
             </div>
             <div class="container-fluid">
@@ -356,7 +357,7 @@
           
        }
         componentDidMount() {
-          //jQuery('[data-toggle="popover"]').popover()
+          $('[data-toggle="popover"]').popover()
             var self = this
           firebase.auth().onAuthStateChanged(function(user) {
               if (user) {
