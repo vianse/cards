@@ -201,8 +201,8 @@
   }, function error(err) {
 
 
-  },function complete() {
-
+  },function complete(response) {
+    console.log(storageRef.fullPath)
   });
 
 
@@ -213,35 +213,35 @@
 });  
 
 
- var uploader_cover = document.getElementById('uploader_cover');
+  var uploader_cover = document.getElementById('uploader_cover');
   var fileButton_cover = document.getElementById('fileButton_cover');
-  fileButton_cover.addEventListener('change', function(e){
-  var file = e.target.files[0];
+  fileButton_cover.addEventListener('change', function (e) {
+    var file = e.target.files[0];
 
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  var storageRef = firebase.storage().ref('cover').child(user.uid).child(user.uid);
-  var task = storageRef.put(file);
-  task.on('state_changed', function progress(snapshot) {
-    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-    uploader_cover.value = percentage;
-    if(percentage == 100){
-        $("#uploader_cover").css("display","none")
-    }
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        var storageRef = firebase.storage().ref('cover').child(user.uid).child(user.uid);
+        var task = storageRef.put(file);
+        task.on('state_changed', function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          uploader_cover.value = percentage;
+          if (percentage == 100) {
+            $("#uploader_cover").css("display", "none")
+          }
 
-  }, function error(err) {
+        }, function error(err) {
 
 
-  },function complete() {
+        }, function complete() {
 
+        });
+
+
+      } else {
+
+      }
+    })
   });
-
-
-  }else{
-
-  }
-  })
-}); 
 
 
 </script>
@@ -274,15 +274,13 @@ if (user) {
 }
 </script>
 <script type="text/jsx">
-   
     class Profile extends React.Component{
           constructor(props) {
             super(props);
             this.state = {
               data: []
             }
-            
-         }
+        }
           componentDidMount() {
 
             firebase.auth().onAuthStateChanged(function(user) {
@@ -295,34 +293,21 @@ if (user) {
                                 id: snap.key,
                                 data: snap.val(),
                           };
-                         
-                         $("#name").val(shop.data.name);
-                         $("#depto").val(shop.data.depto);
-                         $("#whats").val(shop.data.whats);
-                         $("#movil").val(shop.data.movil);
-                         $("#email").val(shop.data.email);
-                       
-                         
+                        $("#name").val(shop.data.name);
+                        $("#depto").val(shop.data.depto);
+                        $("#whats").val(shop.data.whats);
+                        $("#movil").val(shop.data.movil);
+                        $("#email").val(shop.data.email);
                 });
                 } else {
                   // No user is signed in.
                 }
               });
-
-
-           
-           
-                
-         
-           
-           
-           
         }
             render(){
               
                 return(
                         <div>
-                       
                         </div>
                 )
             }
