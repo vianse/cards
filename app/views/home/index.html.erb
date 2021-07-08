@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vicards</title>
 </head>
+<style>
+   .visible {
+    display: none;
+  }
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <body style="display: block;">
 
@@ -114,10 +119,10 @@
 
     </div><!-- / .main-content -->
    
-    <div id="profile"></div>
-    <div id="uw"></div>
-    <div id="um"></div>
-    <div id="ue"></div>
+    <div id="profile" class="visible"></div>
+    <div id="uw" class="visible"></div>
+    <div id="um" class="visible"></div>
+    <div id="ue" class="visible"></div>
     
     <div id="draggable-live-region" aria-relevant="additions" aria-atomic="true" aria-live="assertive" role="log"
         style="position: fixed; width: 1px; height: 1px; top: -1px; overflow: hidden;"></div>
