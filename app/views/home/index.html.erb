@@ -511,7 +511,7 @@
           if (user) {
             var database = firebase.database();
         
-            var ref = database.ref("business").child(user.uid)
+            var ref = database.ref("business")//.child(user.uid)
             ref.orderByChild("estatusId").equalTo(2).on('child_added', snap => { 
             
             const shop = {
