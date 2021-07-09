@@ -103,7 +103,7 @@
                     </li>
                     <li class="flex flex-col pt-5 pb-5 pl-4 pr-4">
                       <div class=" self-center w-8">
-                        <a href="http://www.nissanecatepec.com.mx" class="">
+                        <a href="http://www.nissanecatepec.com.mx" target="blank" class="">
                           <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <title>Página Web</title>
                             <path style="fill:#1E88E5;"
@@ -121,7 +121,7 @@
                             d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
                       </div>
-                      <a href="https://facebook.com/pages/category/Car-Dealership/nissaneca3030/posts/?locale2=es_LA"
+                      <a href="https://facebook.com/pages/category/Car-Dealership/nissaneca3030/posts/?locale2=es_LA" target="blank"
                         class="">
                         <div class="mt-2">Facebook</div>
                       </a>
@@ -178,7 +178,7 @@
     };
     var str= getUrlParameter('token');
     var token = str.replace("'", "");
-    console.log(token)
+    
     class Profile extends React.Component{
           constructor(props) {
             super(props);
@@ -237,7 +237,7 @@
                         self.setState({
                             datos: $("#uw").html()
                         })   
-                        console.log(self.state.datos) 
+                        
                        
               });
               
@@ -286,7 +286,7 @@
                         self.setState({
                             datos: $("#um").html()
                         })   
-                        console.log(self.state.datos) 
+                        
                        
               });
               
@@ -302,7 +302,7 @@
                 var url =  movil
               return(
                       <div>
-                        <a href="#" className="">
+                        <a href="#" target="blank" className="">
                           {url}
                         </a>
                        
@@ -336,7 +336,7 @@
                         self.setState({
                             datos: $("#ue").html()
                         })   
-                        console.log(self.state.datos) 
+                      
                        
               });
               
@@ -352,7 +352,7 @@
                 var url = "mailto:" + email
               return(
                      
-                        <a href={url} className="">
+                        <a href={url} target="blank" className="">
                             Email
                         </a>
                        
@@ -392,24 +392,24 @@
                   switch (error.code) {
                     case 'storage/object-not-found':
                    
-                      console.log(error.code)
+                      
                       break;
                 
                     case 'storage/unauthorized':
                    
-                      console.log(error.code)
+                      
                       break;
                 
                     case 'storage/canceled':
                      
-                      console.log(error.code)
+                      
                       break;
                 
                
                 
                     case 'storage/unknown':
                    
-                      console.log(error.code)
+                      
                       break;
                   }
                 });
@@ -424,24 +424,24 @@
                      switch (error.code) {
                        case 'storage/object-not-found':
                       
-                         console.log(error.code)
+                         
                          break;
                    
                        case 'storage/unauthorized':
                       
-                         console.log(error.code)
+                         
                          break;
                    
                        case 'storage/canceled':
                         
-                         console.log(error.code)
+                         
                          break;
                    
                   
                    
                        case 'storage/unknown':
                       
-                         console.log(error.code)
+                         
                          break;
                      }
                    });
@@ -491,7 +491,7 @@
               self.setState({
                   dato: self.state.dato, arr:newArr
               });
-              console.log(this.state.dato)
+             
           });
     }
         render(){
@@ -513,7 +513,7 @@
                   return(
                       <div className="col-12 col-lg-3">
                           <div className="card" >
-                            <a href="project-overview.html">
+                            <a href="#">
                               {imagenVideo}
                             </a>
                             <div className="card-body">

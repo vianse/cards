@@ -36,12 +36,12 @@
           
           <!-- Heading -->
           <h1 class="display-4 text-center mb-3">
-            Sign in
+            Hola!
           </h1>
           
           <!-- Subheading -->
           <p class="text-muted text-center mb-5">
-            Free access to our dashboard.
+            Bienvenido.
           </p>
           
           <!-- Form -->
@@ -51,7 +51,7 @@
             <div class="form-group">
 
               <!-- Label -->
-              <label>Email Address</label>
+              <label>Correo electrónico</label>
 
               <!-- Input -->
               <input type="email" class="form-control" id="email" placeholder="name@address.com">
@@ -61,46 +61,26 @@
             <!-- Password -->
             <div class="form-group">
 
-              <div class="row">
-                <div class="col">
-                      
-                  <!-- Label -->
                   <label>Password</label>
 
-                </div>
-                <div class="col-auto">
-                  
-                  <!-- Help text -->
-                  <a href="password-reset-illustration.html" class="form-text small text-muted">
-                    Forgot password?
-                  </a>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
 
-                </div>
-              </div> <!-- / .row -->
-
-              <!-- Input group -->
-              <div class="input-group input-group-merge">
-
-                <!-- Input -->
-                <input type="password" class="form-control form-control-appended" id="password" placeholder="Enter your password">
-
-                <!-- Icon -->
-                
-
-              </div>
             </div>
 
             <!-- Submit -->
-            <a href="javascript:signin();" class="btn btn-lg btn-block btn-primary mb-3">
-              Sign in
-            </a>
-            
-            <!-- Link -->
-            <div class="text-center">
-              <small class="text-muted text-center">
-                Aun no tienes una cuenta? <a href="javascript:registrar();">Registrar</a>.
-              </small>
+            <div class="flex flex-col">
+              <a href="javascript:signin();" class="btn btn-lg btn-block btn-primary mb-3">
+                Iniciar Sesión
+              </a>
+              <label class="text-center"> O </label>
+              <!-- Link -->
+              <div class="text-center">
+                <a href="javascript:registrar();" class="btn btn-lg btn-block btn-warning mb-3">
+                Registrate
+              </a>
+              </div>
             </div>
+           
             
           </form>
 
@@ -131,7 +111,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorMessage);
+        
         // ...
       });
  }

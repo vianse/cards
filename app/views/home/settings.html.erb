@@ -202,7 +202,7 @@
 
 
   },function complete(response) {
-    console.log(storageRef.fullPath)
+   
   });
 
 
@@ -256,7 +256,7 @@
         var email = $("#email").val();
 
 if (user) {
-    console.log(user)
+    
     var database = firebase.database();
     database.ref('profiles').child(user).set({
         name: name,
@@ -285,7 +285,7 @@ if (user) {
 
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
-                    console.log(user.uid)
+                    
                     var database = firebase.database();
                     var ref = database.ref("profiles/" + user.uid);
                     ref.once('value', snap => {
