@@ -210,21 +210,22 @@
                 if (user) {
                     var database = firebase.database();
                     var ref = database.ref("profiles/" + user.uid);
-                    ref.orderByChild("status").equalTo("Activo").once('value', snap => {
-                      if(snap.val()){
-                            const shop = {
-                              id: snap.key,
-                              data: snap.val(),
-                        };
-                        $("#name").text(shop.data.name);
-                        $("#depto").text(shop.data.depto);
-                      }else{
+                    ref.once('value', snap => {
+                      if(snap.val().status == "Desactivada"){
                         firebase.auth().signOut().then(function() {
                           // Sign-out successful.
                           window.location.href("/")
                         }).catch(function(error) {
                           // An error happened.
                         });
+
+                      }else{
+                        const shop = {
+                          id: snap.key,
+                          data: snap.val(),
+                    };
+                    $("#name").text(shop.data.name);
+                    $("#depto").text(shop.data.depto);
                       }
                         
                     });
