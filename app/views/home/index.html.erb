@@ -208,18 +208,27 @@
 
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
-                   
                     var database = firebase.database();
                     var ref = database.ref("profiles/" + user.uid);
-                    ref.once('value', snap => {
-                        const shop = {
-                                id: snap.key,
-                                data: snap.val(),
-                          };
-                          $("#name").text(shop.data.name);
-                          $("#depto").text(shop.data.depto);
-                });
-                } else {
+                    ref.orderByChild("status").equalTo("Activo").once('value', snap => {
+                      if(snap.val()){
+                            const shop = {
+                              id: snap.key,
+                              data: snap.val(),
+                        };
+                        $("#name").text(shop.data.name);
+                        $("#depto").text(shop.data.depto);
+                      }else{
+                        firebase.auth().signOut().then(function() {
+                          // Sign-out successful.
+                          window.location.href("/")
+                        }).catch(function(error) {
+                          // An error happened.
+                        });
+                      }
+                        
+                    });
+                  } else {
                   // No user is signed in.
                 }
               });
